@@ -8,7 +8,7 @@
 
 **A local-first, model-agnostic workflow for AI-assisted animated shorts.**
 
-[▶ Watch the 24-second overview](site/media/kinoquence-overview.mp4) · [Project website](site/index.html) · [Quick start](#quick-start) · [Known limitations](docs/KNOWN_LIMITATIONS.md)
+[▶ Watch the 24-second overview](site/media/kinoquence-overview.mp4) · [Project website](site/index.html) · [Quick start](#quick-start) · [Deployment guide](docs/DEPLOYMENT.md) · [Known limitations](docs/KNOWN_LIMITATIONS.md)
 
 </div>
 
