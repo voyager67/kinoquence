@@ -5,7 +5,7 @@ description: Plan, storyboard, render and quality-check original short-form anim
 
 # Kinoquence skill for Claude
 
-Read `docs/SCHEMA.md`, `docs/QUALITY.md` and `prompts/story_director.md` before editing the project. This skill is adapted for Claude Code; the core story format and CLI remain model-neutral.
+Read `docs/SCHEMA.md`, `docs/QUALITY.md` and `kinoquence/prompts/story_director.md` before editing the project. This skill is adapted for Claude Code; the core story format and CLI remain model-neutral.
 
 ## Production loop
 
