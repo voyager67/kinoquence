@@ -1,0 +1,54 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+node_modules/
+remotion/node_modules/
+remotion/out/
+remotion/public/kinoquence/*
+!remotion/public/kinoquence/.gitkeep
+.kinoquence/
+exports/*.mp4
+exports/*.mov
+exports/*.wav
+exports/*.json
+benchmarks/results/*.json
+.DS_Store
+Thumbs.db
+
+# Private credentials, certificates and local secrets
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+private/
+
+# Generated release artifacts
+*.whl
+*.tar.gz
+*.zip
+SHA256SUMS.txt
+
+# Creator workspaces and their potentially private research/media
+/projects/
+/exports/
+/benchmarks/results/
+/assets/*.wav
+/assets/*.mp3
+/assets/*.mp4
+/assets/*.mov
+
+# Local test and build state
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+coverage.xml
+*.log

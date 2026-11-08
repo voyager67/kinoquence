@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+<title id="title">Kinoquence mark</title><desc id="desc">A geometric K formed from a vertical frame and two forward-moving sequence strokes.</desc>
+<defs><linearGradient id="kq" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69E2D0"/><stop offset=".55" stop-color="#73C9FA"/><stop offset="1" stop-color="#F4B66D"/></linearGradient></defs>
+<rect x="5" y="5" width="118" height="118" rx="30" fill="#0B1424" stroke="#263A53" stroke-width="2"/>
+<path d="M39 27V101M41 64L91 29M41 64L91 99" fill="none" stroke="url(#kq)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="92" cy="29" r="5" fill="#F4B66D"/><circle cx="92" cy="99" r="5" fill="#69E2D0"/>
+</svg>

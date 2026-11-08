@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "title": "Replace with your title",
+  "story_type": "fiction",
+  "language": "en",
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "target_duration_seconds": 60,
+  "style": "storybook_2_5d",
+  "palette": ["#14213D", "#FCA311", "#E5E5E5", "#2A9D8F"],
+  "sources": [],
+  "claims": [],
+  "scenes": [
+    {
+      "id": "hook",
+      "duration_seconds": 4,
+      "narration": "The first line should create a clear question or visual surprise.",
+      "caption": "A short, readable opening line.",
+      "sfx": ["impact"],
+      "camera_move": "push_in",
+      "visual": {
+        "background": "#14213D",
+        "secondary_background": "#FCA311",
+        "title": "A STRONG HOOK",
+        "subtitle": "Opening beat",
+        "elements": [
+          {"type": "ellipse", "x": 50, "y": 92, "w": 28, "h": 28, "fill": "#FCA311"}
+        ]
+      }
+    }
+  ]
+}

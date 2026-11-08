@@ -1,0 +1,22 @@
+{
+  "name": "kinoquence-remotion-renderer",
+  "version": "1.0.0-rc.3",
+  "private": true,
+  "description": "Local Remotion renderer for Kinoquence projects",
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts KinoquenceShort out/final.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "@remotion/media": "4.0.540",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}

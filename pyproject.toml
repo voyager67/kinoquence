@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kinoquence-short-studio"
+version = "1.0.0rc3"
+description = "Local-first, model-agnostic workflow for AI-assisted animated shorts"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Kinoquence contributors"}]
+keywords = ["video", "remotion", "shorts", "ai", "storyboard", "open-source"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13"
+]
+dependencies = []
+
+[project.scripts]
+kinoquence = "kinoquence.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["kinoquence*"]
+
+[tool.setuptools.package-data]
+kinoquence = ["prompts/*.md"]

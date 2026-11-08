@@ -1,0 +1,26 @@
+{
+  "storybook_2_5d": {
+    "description": "Layered vector storybook scenes with restrained parallax, painted-color feel and simple illustrated characters.",
+    "palette": ["#14213D", "#FCA311", "#E5E5E5", "#2A9D8F"],
+    "camera_moves": ["push_in", "pull_out", "pan_left", "pan_right", "tilt_up", "drift"],
+    "notes": "Current renderer baseline. Not full 3D."
+  },
+  "documentary_infographic": {
+    "description": "High-contrast data cards, timelines, maps as simplified vector geometry and clean labels.",
+    "palette": ["#0B132B", "#1C2541", "#5BC0BE", "#FDE74C"],
+    "camera_moves": ["push_in", "pan_left", "pan_right", "static"],
+    "notes": "Use primary sources for numbers and dates."
+  },
+  "paper_cut": {
+    "description": "Layered cut-paper shapes, offset shadows and limited colour palette.",
+    "palette": ["#264653", "#E9C46A", "#F4A261", "#E76F51"],
+    "camera_moves": ["push_in", "pull_out", "drift"],
+    "notes": "Use original illustrations and avoid copying existing character designs."
+  },
+  "kinetic_type": {
+    "description": "Typographic motion, large words, symbolic shapes and strict safe-area control.",
+    "palette": ["#101820", "#FEE715", "#FFFFFF", "#00A6A6"],
+    "camera_moves": ["push_in", "pan_left", "pan_right", "static"],
+    "notes": "Current renderer supports text elements but not word-by-word karaoke alignment."
+  }
+}

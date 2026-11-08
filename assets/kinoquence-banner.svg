@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620" role="img" aria-labelledby="t d">
+<title id="t">Kinoquence — from story idea to a reviewable short</title>
+<desc id="d">Kinoquence's brand illustration: a cinematic storyboard sequence flowing into a structured production timeline.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1424"/><stop offset=".55" stop-color="#101D31"/><stop offset="1" stop-color="#17253A"/></linearGradient>
+ <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69E2D0"/><stop offset=".55" stop-color="#73C9FA"/><stop offset="1" stop-color="#F4B66D"/></linearGradient>
+ <linearGradient id="scene1" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#264A66"/><stop offset="1" stop-color="#D49A70"/></linearGradient>
+ <linearGradient id="scene2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#4A587D"/><stop offset="1" stop-color="#242D45"/></linearGradient>
+ <linearGradient id="scene3" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#264C58"/><stop offset="1" stop-color="#142A38"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1600" height="620" rx="34" fill="url(#bg)"/>
+<circle cx="1300" cy="100" r="210" fill="#68D9D0" opacity=".07" filter="url(#shadow)"/>
+<circle cx="1480" cy="540" r="240" fill="#F4B66D" opacity=".06" filter="url(#shadow)"/>
+<g opacity=".12" stroke="#9AB2CC"><path d="M0 510H1600M0 550H1600M0 590H1600"/><path d="M1200 0V620M1280 0V620M1360 0V620M1440 0V620M1520 0V620"/></g>
+<g transform="translate(95 102)">
+ <rect width="78" height="78" rx="22" fill="#0B1424" stroke="#34516A" stroke-width="2"/>
+ <path d="M28 18V60M29 39L59 18M29 39L59 60" fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+ <circle cx="60" cy="18" r="3.5" fill="#F4B66D"/><circle cx="60" cy="60" r="3.5" fill="#69E2D0"/>
+ <text x="105" y="55" font-family="Inter,Arial,sans-serif" font-size="58" font-weight="800" letter-spacing="7" fill="#F3F7FC">KINOQUENCE</text>
+ <text x="2" y="143" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="600" fill="#C6D5E6">From story idea to a reviewable short.</text>
+ <text x="2" y="196" font-family="Inter,Arial,sans-serif" font-size="16" letter-spacing="3" fill="#78DCCF">OPEN WORKFLOW  ·  LOCAL-FIRST  ·  CROSS-MODEL</text>
+ <path d="M2 238H600" stroke="#36516B" stroke-width="2"/>
+ <g font-family="Inter,Arial,sans-serif" font-size="17" fill="#AFC1D5"><text x="2" y="280">Editable storyboards</text><text x="2" y="316">Reusable assets + audio</text><text x="2" y="352">Captions + provenance + QA</text></g>
+</g>
+<g transform="translate(815 105)">
+ <rect x="0" y="0" width="680" height="390" rx="26" fill="#0A1321" stroke="#2D435D" stroke-width="2"/>
+ <text x="32" y="42" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#91A8C1">STORYBOARD SEQUENCE · ILLUSTRATIVE</text>
+ <g transform="translate(34 65)">
+  <rect width="188" height="212" rx="12" fill="url(#scene1)"/>
+  <circle cx="142" cy="56" r="22" fill="#F6D6A0"/>
+  <path d="M0 145L54 91l44 44 38-64 52 60v81H0z" fill="#38566A"/>
+  <path d="M0 174l58-35 45 27 44-30 41 27v49H0z" fill="#1C3A42"/>
+  <rect y="178" width="188" height="34" rx="0" fill="#0B1424" opacity=".65"/>
+  <text x="14" y="200" font-family="Inter,Arial,sans-serif" font-size="11" fill="#ECF3FA">01 · OPENING</text>
+ </g>
+ <g transform="translate(246 65)">
+  <rect width="188" height="212" rx="12" fill="url(#scene2)"/>
+  <circle cx="95" cy="86" r="34" fill="#DCA77C" opacity=".9"/>
+  <path d="M36 185q8-90 59-90t59 90" fill="#273A58"/>
+  <path d="M17 48h154M17 58h84" stroke="#B5D8E9" stroke-width="5" opacity=".35"/>
+  <rect y="178" width="188" height="34" fill="#0B1424" opacity=".65"/>
+  <text x="14" y="200" font-family="Inter,Arial,sans-serif" font-size="11" fill="#ECF3FA">02 · STORY BEAT</text>
+ </g>
+ <g transform="translate(458 65)">
+  <rect width="188" height="212" rx="12" fill="url(#scene3)"/>
+  <path d="M0 135q42-55 85-26t103-5v108H0z" fill="#315B55"/>
+  <path d="M25 150v-43l26-25 26 25v43" fill="none" stroke="#E9C28B" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="51" cy="101" r="8" fill="#F3D5A2"/>
+  <path d="M0 178h188v34H0z" fill="#0B1424" opacity=".65"/>
+  <text x="14" y="200" font-family="Inter,Arial,sans-serif" font-size="11" fill="#ECF3FA">03 · RESOLUTION</text>
+ </g>
+ <g transform="translate(34 302)">
+  <text x="0" y="12" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="1.5" fill="#91A8C1">PRODUCTION LAYERS</text>
+  <rect x="0" y="24" width="610" height="12" rx="6" fill="#17283B"/>
+  <rect x="0" y="24" width="176" height="12" rx="6" fill="#65CFC1"/>
+  <rect x="184" y="24" width="202" height="12" rx="6" fill="#77BCEB"/>
+  <rect x="394" y="24" width="216" height="12" rx="6" fill="#D9A66F"/>
+  <g font-family="Inter,Arial,sans-serif" font-size="10" fill="#AFC1D5"><text x="0" y="57">STORY + SCENES</text><text x="208" y="57">AUDIO + CAPTIONS</text><text x="434" y="57">PROVENANCE + QA</text></g>
+ </g>
+</g>
+<text x="96" y="567" font-family="Inter,Arial,sans-serif" font-size="13" letter-spacing="2" fill="#69849F">BUILD LOCALLY · KEEP IT EDITABLE · VERIFY BEFORE YOU PUBLISH</text>
+</svg>

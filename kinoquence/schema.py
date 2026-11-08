@@ -1,0 +1,127 @@
+from __future__ import annotations
+
+from typing import Any
+
+SCHEMA_VERSION = "1.0"
+CAMERA_MOVES = {
+    "push_in", "pull_out", "pan_left", "pan_right", "tilt_up", "tilt_down", "drift", "static"
+}
+ELEMENT_TYPES = {"rect", "ellipse", "line", "polygon", "text", "character"}
+
+
+def starter_story(title: str = "A Small Story, Told Visually") -> dict[str, Any]:
+    """An original fictional sample that demonstrates the open storyboard format."""
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "title": title,
+        "story_type": "fiction",
+        "language": "en",
+        "fps": 30,
+        "width": 1080,
+        "height": 1920,
+        "target_duration_seconds": 24,
+        "style": "storybook_2_5d",
+        "palette": ["#14213D", "#FCA311", "#E5E5E5", "#2A9D8F"],
+        "sources": [],
+        "claims": [],
+        "scenes": [
+            {
+                "id": "hook",
+                "duration_seconds": 4,
+                "narration": "On a quiet rooftop, one tiny seed found a place to begin.",
+                "caption": "A tiny seed. A very big beginning.",
+                "sfx": ["soft_pop"],
+                "camera_move": "push_in",
+                "visual": {
+                    "background": "#14213D",
+                    "title": "ONE SMALL SEED",
+                    "subtitle": "A rooftop story",
+                    "elements": [
+                        {"type": "rect", "x": 0, "y": 125, "w": 100, "h": 55, "fill": "#3A506B"},
+                        {"type": "rect", "x": 12, "y": 115, "w": 76, "h": 7, "fill": "#FCA311"},
+                        {"type": "ellipse", "x": 47, "y": 89, "w": 6, "h": 9, "fill": "#E9C46A"},
+                        {"type": "line", "x": 50, "y": 98, "x2": 50, "y2": 112, "stroke": "#2A9D8F", "stroke_width": 2}
+                    ]
+                }
+            },
+            {
+                "id": "rain",
+                "duration_seconds": 5,
+                "narration": "Rain arrived first, tapping the roof like a patient drummer.",
+                "caption": "Then came the rain.",
+                "sfx": ["rain_light", "whoosh"],
+                "camera_move": "pan_right",
+                "visual": {
+                    "background": "#23395B",
+                    "title": "ROOM TO GROW",
+                    "subtitle": "Water, light, and time",
+                    "elements": [
+                        {"type": "rect", "x": 0, "y": 132, "w": 100, "h": 45, "fill": "#526D82"},
+                        {"type": "line", "x": 20, "y": 22, "x2": 12, "y2": 44, "stroke": "#BDE0FE", "stroke_width": 1.4},
+                        {"type": "line", "x": 43, "y": 10, "x2": 35, "y2": 32, "stroke": "#BDE0FE", "stroke_width": 1.4},
+                        {"type": "line", "x": 78, "y": 30, "x2": 70, "y2": 52, "stroke": "#BDE0FE", "stroke_width": 1.4},
+                        {"type": "ellipse", "x": 50, "y": 104, "w": 4, "h": 10, "fill": "#E9C46A"}
+                    ]
+                }
+            },
+            {
+                "id": "sprout",
+                "duration_seconds": 5,
+                "narration": "A green shoot pushed through the crack, reaching for the morning sun.",
+                "caption": "A little green changes the whole view.",
+                "sfx": ["soft_pop"],
+                "camera_move": "tilt_up",
+                "visual": {
+                    "background": "#457B9D",
+                    "title": "UPWARD",
+                    "subtitle": "The first leaves",
+                    "elements": [
+                        {"type": "rect", "x": 0, "y": 132, "w": 100, "h": 45, "fill": "#6C757D"},
+                        {"type": "line", "x": 50, "y": 129, "x2": 50, "y2": 92, "stroke": "#2A9D8F", "stroke_width": 3},
+                        {"type": "ellipse", "x": 42, "y": 98, "w": 14, "h": 6, "fill": "#A7C957", "rotation": -28},
+                        {"type": "ellipse", "x": 55, "y": 89, "w": 14, "h": 6, "fill": "#A7C957", "rotation": 28},
+                        {"type": "ellipse", "x": 82, "y": 25, "w": 15, "h": 15, "fill": "#F4D35E"}
+                    ]
+                }
+            },
+            {
+                "id": "garden",
+                "duration_seconds": 5,
+                "narration": "Soon the rooftop had shade, colour, and a visitor that needed no invitation.",
+                "caption": "A rooftop becomes a tiny habitat.",
+                "sfx": ["birds_soft", "chime"],
+                "camera_move": "drift",
+                "visual": {
+                    "background": "#264653",
+                    "title": "A NEW NEIGHBOURHOOD",
+                    "subtitle": "One roof, many lives",
+                    "elements": [
+                        {"type": "rect", "x": 0, "y": 132, "w": 100, "h": 45, "fill": "#8D99AE"},
+                        {"type": "ellipse", "x": 30, "y": 119, "w": 25, "h": 9, "fill": "#2A9D8F"},
+                        {"type": "ellipse", "x": 55, "y": 117, "w": 20, "h": 8, "fill": "#A7C957"},
+                        {"type": "character", "x": 69, "y": 112, "w": 12, "h": 26, "fill": "#FCA311", "pose": "standing"}
+                    ]
+                }
+            },
+            {
+                "id": "close",
+                "duration_seconds": 5,
+                "narration": "Sometimes a better world starts with the smallest space we choose to make room for.",
+                "caption": "Make room for something to grow.",
+                "sfx": ["warm_chime"],
+                "camera_move": "pull_out",
+                "visual": {
+                    "background": "#1D3557",
+                    "title": "MAKE ROOM TO GROW",
+                    "subtitle": "Kinoquence sample story · fictional",
+                    "elements": [
+                        {"type": "rect", "x": 0, "y": 132, "w": 100, "h": 45, "fill": "#457B9D"},
+                        {"type": "ellipse", "x": 50, "y": 108, "w": 20, "h": 11, "fill": "#2A9D8F"},
+                        {"type": "line", "x": 50, "y": 111, "x2": 50, "y2": 88, "stroke": "#A7C957", "stroke_width": 3},
+                        {"type": "ellipse", "x": 43, "y": 92, "w": 12, "h": 6, "fill": "#A7C957", "rotation": -28},
+                        {"type": "ellipse", "x": 56, "y": 86, "w": 12, "h": 6, "fill": "#A7C957", "rotation": 28}
+                    ]
+                }
+            }
+        ]
+    }
