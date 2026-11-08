@@ -50,6 +50,24 @@ class ProviderAdapterTests(unittest.TestCase):
         self.assertNotIn("private-test-key", url)
         self.assertEqual(headers["x-goog-api-key"], "private-test-key")
 
+    def test_api_key_control_characters_are_rejected_without_echoing_value(self):
+        secret = "private-key-value\nAuthorization: Bearer injected-value"
+        config = ProviderConfig(provider="openai-compatible", model="example", base_url="https://example.com/v1", api_key=secret)
+        with patch("kinoquence.providers._request_json") as request:
+            with self.assertRaises(ProviderError) as raised:
+                generate_text(config, "system", "user")
+        self.assertNotIn("private-key-value", str(raised.exception))
+        self.assertNotIn("injected-value", str(raised.exception))
+        request.assert_not_called()
+
+    def test_provider_base_url_rejects_control_characters(self):
+        config = ProviderConfig(provider="openai-compatible", model="example", base_url="https://example.com/v1\n.evil", api_key="key")
+        with patch("kinoquence.providers._request_json") as request:
+            with self.assertRaises(ProviderError) as raised:
+                generate_text(config, "system", "user")
+        self.assertNotIn("key", str(raised.exception))
+        request.assert_not_called()
+
     def test_api_key_is_not_sent_to_remote_plain_http_endpoint(self):
         config = ProviderConfig(
             provider="openai-compatible", model="example", base_url="http://example.com/v1", api_key="secret-value"
