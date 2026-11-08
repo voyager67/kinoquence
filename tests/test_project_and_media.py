@@ -1,5 +1,6 @@
 import json
 import shutil
+from array import array
 import subprocess
 import tempfile
 import unittest
@@ -44,6 +45,12 @@ class ProjectAndMediaTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(len(first), 4800)
         self.assertTrue(any(abs(sample) > 0 for sample in first))
+
+    def test_audio_uses_compact_float_buffers(self):
+        samples = generate_music(0.1, seed=7)
+        self.assertIsInstance(samples, array)
+        self.assertEqual(samples.typecode, "f")
+        self.assertLess(samples.itemsize, 8)
 
     def test_audio_duration_guard_rejects_unbounded_generation(self):
         with self.assertRaises(ValueError):
