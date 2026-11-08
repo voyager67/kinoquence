@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import math
 import random
+from array import array
+from collections.abc import Sequence
 import struct
 import wave
 from pathlib import Path
@@ -13,7 +15,7 @@ from .validate import MAX_STORY_SECONDS, validate_story
 SAMPLE_RATE = 48_000
 
 
-def _write_mono_wav(path: Path, samples: list[float], sample_rate: int = SAMPLE_RATE) -> None:
+def _write_mono_wav(path: Path, samples: Sequence[float], sample_rate: int = SAMPLE_RATE) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     peak = max((abs(s) for s in samples), default=0.0)
     scale = min(0.92 / peak, 1.0) if peak > 0 else 1.0
@@ -28,7 +30,7 @@ def _write_mono_wav(path: Path, samples: list[float], sample_rate: int = SAMPLE_
         out.writeframes(block)
 
 
-def generate_music(duration_seconds: float, seed: int = 21, sample_rate: int = SAMPLE_RATE) -> list[float]:
+def generate_music(duration_seconds: float, seed: int = 21, sample_rate: int = SAMPLE_RATE) -> array:
     """Create an original, deterministic ambient bed; no sampled or third-party music."""
     try:
         finite_duration = math.isfinite(duration_seconds)
@@ -46,7 +48,9 @@ def generate_music(duration_seconds: float, seed: int = 21, sample_rate: int = S
     rng = random.Random(seed)
     duration = max(1, int(duration_seconds * sample_rate))
     notes = [261.63, 329.63, 392.00, 493.88, 220.00, 261.63, 329.63, 440.00]
-    output: list[float] = [0.0] * duration
+    # Float32 buffers use 8x less memory than Python float lists while retaining
+    # ample precision for the final 16-bit PCM WAV output.
+    output = array("f", [0.0]) * duration
     beat_seconds = 0.75
     beat_frames = int(beat_seconds * sample_rate)
     for frame in range(duration):
@@ -75,7 +79,7 @@ def generate_music(duration_seconds: float, seed: int = 21, sample_rate: int = S
     return output
 
 
-def generate_sfx(story: dict[str, Any], sample_rate: int = SAMPLE_RATE) -> list[float]:
+def generate_sfx(story: dict[str, Any], sample_rate: int = SAMPLE_RATE) -> array:
     issues = [issue for issue in validate_story(story) if issue.severity == "error"]
     if issues:
         raise ValueError("Cannot generate sound effects from an invalid story: " + "; ".join(map(str, issues[:8])))
@@ -83,7 +87,7 @@ def generate_sfx(story: dict[str, Any], sample_rate: int = SAMPLE_RATE) -> list[
         raise ValueError(f"Sample rate must be a whole number between 8000 and {SAMPLE_RATE} Hz")
     duration = sum(float(scene["duration_seconds"]) for scene in story["scenes"])
     total = max(1, int(duration * sample_rate))
-    output = [0.0] * total
+    output = array("f", [0.0]) * total
     cursor = 0.0
     rng = random.Random(101)
     cues = {
