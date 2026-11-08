@@ -9,3 +9,13 @@
 - Strengthened credential handling, path validation, safe error reporting and private-workspace exclusion.
 
 This is a public release candidate. See [Known limitations](docs/KNOWN_LIMITATIONS.md) for renderer and live-provider verification status.
+
+
+## Repository audit updates
+
+- Removed duplicate prompt copies, obsolete Cursor filename and redundant placeholder files; kept only public user and contributor documentation.
+- Added an explicit GitHub Pages deployment guide and disabled automatic deployment until the repository variable `PAGES_DEPLOY_ENABLED=true` is set.
+- Added missing local-provider key placeholders and aligned cross-model skill references with the packaged prompt path.
+- Rejected API keys containing control characters or exceeding the safety limit; added regression tests for header-injection and error-message leakage.
+- Replaced Python-float audio sample lists with compact float32 buffers to reduce peak memory use for long projects.
+- Updated GitHub Actions to Node 24-compatible action major versions.
