@@ -26,3 +26,8 @@ Please do not publish credentials, private media, or a working exploit in a publ
 - The included secret-pattern scan is heuristic and is not a substitute for a repository secret scanner or independent security review.
 
 - Render output cannot replace the approved `story.json` or declared narration/music/SFX input files. Symlink output targets are rejected. Renderer stdout/stderr is suppressed by default on failure because it may include local story text or file paths. FFmpeg/ffprobe diagnostic output is also suppressed in QA errors because it can contain local paths or media metadata.
+
+
+## Credential handling safeguards
+
+Provider API keys are read from environment variables or an untracked local environment file. Keys are rejected if they contain control characters or exceed 4096 characters, and remote credential-bearing endpoints must use HTTPS. Provider redirects are refused, and provider response bodies and low-level network exception details are not written to user-facing errors or logs. These controls reduce common accidental-disclosure risks; they are not a substitute for secret scanning, dependency review or secure host configuration.
