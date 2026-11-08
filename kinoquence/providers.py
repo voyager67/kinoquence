@@ -75,6 +75,8 @@ def _validate_config(config: ProviderConfig, provider: str) -> None:
 def _safe_base_url(base_url: str, api_key: str | None) -> str:
     if not isinstance(base_url, str) or not base_url.strip():
         raise ProviderError("Provider base URL must be a non-empty URL string")
+    if any(ord(char) <= 32 or ord(char) == 127 for char in base_url):
+        raise ProviderError("Provider base URL must not contain whitespace or control characters")
     try:
         parsed = urllib.parse.urlsplit(base_url)
         host = parsed.hostname
@@ -179,6 +181,9 @@ def generate_text(config: ProviderConfig, system_prompt: str, user_prompt: str) 
         raise ProviderError("System and user prompts must be strings")
 
     api_key = (config.api_key or os.getenv(KEY_ENV.get(provider, ""), "")).strip()
+    # Prevent header injection and avoid leaking malformed values through low-level HTTP errors.
+    if len(api_key) > 4096 or any(ord(char) < 32 or ord(char) == 127 for char in api_key):
+        raise ProviderError("API key contains unsupported control characters or exceeds the 4096-character safety limit")
     if provider in DEFAULT_BASE_URLS or provider == "openai-compatible":
         base = config.base_url or DEFAULT_BASE_URLS.get(provider) or os.getenv("OPENAI_COMPATIBLE_BASE_URL", "")
         if not base:
