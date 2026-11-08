@@ -62,7 +62,7 @@ For rendering, install the dependencies in `remotion/`, run `npm run typecheck`,
 
 Kinoquence is an open workflow toolkit with a baseline vector/2.5D Remotion renderer. It is not a full 3D animation suite, professional nonlinear editor, hosted video-generation service, licensed music library or voice studio. Consumer chat-app instruction packs are manual workflows, not automatic integrations. Human review remains essential for story quality, facts, accessibility and rights.
 
-**Release verification:** 50 Python tests passed in the recorded environment, including an FFmpeg QA integration test on a generated test clip. A clean Remotion dependency install, TypeScript build and a Kinoquence-generated MP4 have not yet been verified because the npm registry could not be reached (`EAI_AGAIN`). Live provider quality has not been tested across all listed model families. See [known limitations](docs/KNOWN_LIMITATIONS.md).
+**Release verification:** 53 Python tests pass locally and in the GitHub Actions matrix on Python 3.10–3.13, including an FFmpeg QA integration test on a generated test clip. A clean Remotion dependency install, TypeScript build and a Kinoquence-generated MP4 have not yet been verified because the npm registry could not be reached (`EAI_AGAIN`). Live provider quality has not been tested across all listed model families. See [known limitations](docs/KNOWN_LIMITATIONS.md).
 
 ## Privacy and licensing
 
